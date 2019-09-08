@@ -17,7 +17,7 @@ else:
 print(letter)
 
 
-print(len(letter[0]))
+print(len(letter))
 
 
 print(letter[0].isalpha())
@@ -29,3 +29,10 @@ def split(word):
 word = 'love'
 print(word)
 print(split(word))
+ts = (split(word))
+print(len(ts))
+
+for char in ts:
+    i = 0
+    print(char)
+    i = i + 1

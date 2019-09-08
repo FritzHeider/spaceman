@@ -16,11 +16,6 @@ def load_word():
     return secret_word
 
 def is_word_guessed(secret_word, letters_guessed):
-
-    for letters in secret_word:
-        if char in letters:    #####not sure what im doing here
-            if char in guesses:
-                print(char)
     '''
     A function that checks if all the letters of the secret word have been guessed.
     Args:
@@ -31,6 +26,7 @@ def is_word_guessed(secret_word, letters_guessed):
     '''
     # TODO: Loop through the letters in the secret_word and check if a letter is not in lettersGuessed
     pass
+
 
 def get_guessed_word(secret_word, letters_guessed):
     '''
@@ -84,8 +80,8 @@ def spaceman(secret_word):
 
 
 
-
-
 #These function calls that will start the game
 secret_word = load_word()
 spaceman(secret_word)
+print(secret_word)
+print (is_word_guessed)
