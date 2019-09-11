@@ -14,3 +14,11 @@ print(letters)
 print(guesses)
 
 print(len(letters))
+
+guesses.append((letters.pop(5)))
+print("these are popped over into new guesses list")
+print(guesses)
+print(letters)
+
+
+print(len(letters))

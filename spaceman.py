@@ -16,6 +16,9 @@ def load_word():
     return secret_word
 
 def is_word_guessed(secret_word, letters_guessed):
+
+
+
     '''
     A function that checks if all the letters of the secret word have been guessed.
     Args:
@@ -52,7 +55,13 @@ def is_guess_in_word(guess, secret_word):
     Returns:
         bool: True if the guess is in the secret_word, False otherwise
     '''
-    #TODO: check if the letter guess is in the secret word
+    #TODO: check if the letter guess is in the secret word'
+    return guess in secret words
+
+
+    # keep a list of guessed letters, print secret_word with non guessed letters replaced with _, ex word -> w_r_
+
+
 
     pass
 
@@ -83,5 +92,5 @@ def spaceman(secret_word):
 #These function calls that will start the game
 secret_word = load_word()
 spaceman(secret_word)
-print(secret_word)
+print("here is the secret_word  >    " + secret_word)
 print (is_word_guessed)
