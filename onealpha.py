@@ -27,8 +27,8 @@ print(guessed[0].isalpha())
 
 def split(word):
     return [char for char in word]
- 
-print (st)
+
+
 
 print(split(word))
 ts = (split(word))
