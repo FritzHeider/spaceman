@@ -8,8 +8,7 @@
 guessed = []
 print(guessed)
 
-
-guessed.append(input("put your inout here > "))
+guessed.append(input("Please guess your letter here > "))
 
 
 if len(guessed[0]) == 1 & guessed[0].isalpha():
@@ -25,10 +24,14 @@ print(len(guessed))
 print("Is > " + guessed[0] + " < a letter?")
 print(guessed[0].isalpha())
 
+word = "love"
+
 def split(word):
     return [char for char in word]
 
 
+
+print (st)
 
 print(split(word))
 ts = (split(word))

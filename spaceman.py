@@ -38,7 +38,11 @@ def is_guess_in_word(guess, secret_word):
 
 def spaceman(secret_word):
 
-    print('\n\nReady to play the Spaceman Game?')
+    print(colored('\n\nReady to play the Spaceman Game?', "blue", attrs=["bold"]))
+    print(colored('\n\nSee if you can guess the secret word!', "yellow", attrs=["bold"]))
+    print(colored('\n\nGuess the word before you run out of tries!', "green", attrs=["bold"]))
+
+
     print(secret_word)
 
     letters_guessed = []
@@ -47,12 +51,12 @@ def spaceman(secret_word):
 
     while (is_word_guessed(secret_word, letters_guessed) == False and guessed > 0):
 
-        print('You have ' + str(guessed) + ' tries!')
+        print(colored('You have ' + str(guessed) + ' tries!', "yellow"))
         get_guessed_word(secret_word, letters_guessed)
         guess = input("Please guess your letter here > ")
 
         if not (guess.isalpha() == True and len(guess) == 1):
-            print('You messed up, try picking one letter!')
+            print(colored('You messed up, try picking one letter!', "red", attrs=["bold"]))
         elif (guess in letters_guessed):
             print ('We already tried that one! try again!')
         else:
@@ -64,15 +68,26 @@ def spaceman(secret_word):
                 print('The letter is not in the word')
 
     if (guessed < 1):
-        print ("I hate to say it but you are out of guesses!")
-
-    else:
-        print ('I cannot believe it!, this have never happend before! Congratulations! you won!. ')
+        print (colored("I hate to say it but you are out of guesses!", "red"))
         print("The secret word was!")
         for  char in secret_word:
             i = 0
             print(char)
             i = i + 1
+        again = str(input("Type yes if you would like to play again > "))
+        print (again)
+        if again == "yes":
+            secret_word = load_word()
+            spaceman(secret_word)
+
+
+    else:
+        print(colored('I cannot believe it!, this have never happend before! Congratulations! you won!. ', "magenta", attrs=["bold"]))
+        again = str(input("Type yes if you would like to play again > "))
+        print (again)
+        if again == "yes":
+            secret_word = load_word()
+            spaceman(secret_word)
 
 secret_word = load_word()
 spaceman(secret_word)
