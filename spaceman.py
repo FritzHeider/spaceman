@@ -1,3 +1,4 @@
+import unittest
 import random
 from termcolor import colored #i want to try to play with colors too
 
@@ -98,4 +99,34 @@ def spaceman(secret_word):
             spaceman(secret_word)
 
 secret_word = load_word()
-spaceman(secret_word)
+#spaceman(secret_word)
+
+class SpacemanTests(unittest.TestCase):
+
+
+    def test_is_word_guessed(self):
+        #teasting edge case with just 3 letters
+        self.assertEqual(is_word_guessed("test", "tse"), True)
+        self.assertEqual(is_word_guessed("test", "wdse"), False)
+        self.assertEqual(is_word_guessed("makeschool", "wdsealdnxs"), False)
+
+        #testing if word is guessed after extra letters
+    def test_is_word_guessed_plus(self):
+        self.assertEqual(is_word_guessed("fritz", "fraitz"), True)
+        self.assertEqual(is_word_guessed("fritz", "fraitews"), False)
+        self.assertEqual(is_word_guessed("fritz", "fraitvxawz"), True)
+
+        #testing to see if letters in word
+    def test_guess_in_word_true(self):
+        self.assertEqual(is_guess_in_word("t", "test"), True)
+        self.assertEqual(is_guess_in_word("r", "fact"), False)
+        self.assertEqual(is_guess_in_word("p", "please"), True)
+
+
+    def test_get_guess_in_word(self):
+    #interesting behavior here
+        self.assertEqual(get_guessed_word("test", "test"), None)
+        self.assertEqual(get_guessed_word("test", "doggos"), None)
+
+if __name__ == '__main__':
+    unittest.main()
